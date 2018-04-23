@@ -4,6 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.root.projectsarah.settingsMenuActivity">
+    tools:context="com.example.root.projectsarah.settingsMenuActivity"
+    android:background="@color/lightGrey">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+    <Switch
+        android:id="@+id/switch1"
+        style="@style/SwitchII"
+        android:layout_width="341dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="36dp"
+        android:checked="false"
+        android:enabled="true"
+        android:switchTextAppearance="@android:style/TextAppearance.Material.Widget.Button"
+        android:text="Semi-Auto Mode(WIP)"
+        android:textColorLink="@android:color/holo_green_light"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:checked="false" />
+
 
 </android.support.constraint.ConstraintLayout>

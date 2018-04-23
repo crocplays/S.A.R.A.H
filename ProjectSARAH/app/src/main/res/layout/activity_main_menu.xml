@@ -4,66 +4,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/darker_gray"
+    android:background="@color/lightGrey"
     tools:context="com.example.root.projectsarah.MainMenu"
     tools:layout_editor_absoluteY="81dp">
 
-    <Button
-        android:id="@+id/settings"
-        style="@android:style/Widget.Material.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="108dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_light"
-        android:text="Settings"
-        android:textColor="@android:color/background_dark"
-        android:textColorLink="@android:color/holo_green_light"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/statistics"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
 
-    <Button
-        android:id="@+id/control"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/holo_green_light"
-        android:text="Control"
-        android:textColor="@android:color/background_dark"
-        android:textColorLink="@android:color/holo_green_light"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/settings"
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="102dp"
+        android:layout_height="96dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="68dp"
+        android:adjustViewBounds="false"
+        android:background="@mipmap/ic_launcher_foreground"
+        android:onClick="onControlClick"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.791"
-        tools:layout_constraintHeight_percent="80"
-        tools:layout_constraintWidth_percent="50" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/ic_control_round" />
 
-    <Button
-        android:id="@+id/statistics"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/holo_green_light"
-        android:text="Statistics"
-        android:textColor="@android:color/background_dark"
-        android:textColorLink="@android:color/holo_green_light"
-        android:visibility="visible"
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="108dp"
+        android:layout_height="91dp"
+        android:layout_marginBottom="36dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@mipmap/ic_launcher_foreground"
+        android:onClick="onStatisticsClick"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/ic_statistics_round"
+         />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="90dp"
+        android:layout_height="89dp"
+        android:layout_marginBottom="96dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@mipmap/ic_launcher_foreground"
+        android:onClick="onSettingsClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_constraintHeight_percent="20"
-        tools:layout_constraintWidth_percent="50" />
+        app:srcCompat="@mipmap/ic_settings_round"
+         />
 
 </android.support.constraint.ConstraintLayout>
