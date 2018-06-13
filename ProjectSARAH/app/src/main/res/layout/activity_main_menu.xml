@@ -34,7 +34,7 @@
         android:id="@+id/imageButton9"
         android:layout_width="108dp"
         android:layout_height="91dp"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="52dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@mipmap/ic_launcher_foreground"
@@ -42,8 +42,7 @@
         app:layout_constraintBottom_toTopOf="@+id/imageButton10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/ic_statistics_round"
-         />
+        app:srcCompat="@mipmap/ic_statistics_round" />
 
     <ImageButton
         android:id="@+id/imageButton10"

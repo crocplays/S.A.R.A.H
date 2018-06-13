@@ -15,6 +15,8 @@ try:
         elif "off" in data:
             dev.toggleOff()
         elif data[2:7] == "Timer":
-            dev.minutesControl(int(data[9:]))
+            dev.minutesControl(int(data[8:]))
+except Exception, e:
+    print e
 finally:
     serv.close()

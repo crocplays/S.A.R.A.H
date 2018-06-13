@@ -14,7 +14,7 @@ import android.widget.Toast;
 public class controlMenuActivity extends AppCompatActivity {
 
     private communication com;
-    //private TextInputLayout timerValue;
+    private TextInputLayout TimerValue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class controlMenuActivity extends AppCompatActivity {
         com = communication.getInstance();
         new RetrieveFeedTask().execute(com);
 
-        //TextInputLayout timerValue = (TextInputLayout) findViewById(R.id.timerValue);
+        TimerValue = (TextInputLayout) findViewById(R.id.timerValue);
 
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Control Panel");
@@ -82,7 +82,7 @@ public class controlMenuActivity extends AppCompatActivity {
     }
 
     public void onTimerClick(View v){
-       //new AsyncSendTimedOn().execute(com,"Timer " + timerValue.getEditText().getText().toString()); // add textbox with seconds to activate , put the value in the str()
+       new AsyncSendTimedOn().execute(com,"Timer " + TimerValue.getEditText().getText().toString()); // add textbox with seconds to activate , put the value in the str()
     }
 
 
