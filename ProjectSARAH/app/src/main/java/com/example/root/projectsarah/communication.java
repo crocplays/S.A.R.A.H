@@ -9,16 +9,28 @@ import java.net.*;
 
 public class communication {
 
-    private static final communication ourInstance = new communication();
+    private static communication ourInstance;
 
-    public static communication getInstance() {
-        return ourInstance;
+    public static communication getInstance(String ip,int port) {
+         if (ourInstance == null){ourInstance = new communication( ip, port);}
+         return ourInstance;
     }
     private  DataInputStream iIn;
     private DataOutputStream dout;
 
-    private communication() {
+    private communication(String ip,int port) {
+        try{
+            BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
+            Socket sock = new Socket(ip, port);
+            dout = new DataOutputStream(sock.getOutputStream());
+            iIn = new DataInputStream(sock.getInputStream());
+            BufferedReader inFromServer = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 
+
+        }catch(Exception e){
+
+            e.printStackTrace();
+        }
 
     }
 

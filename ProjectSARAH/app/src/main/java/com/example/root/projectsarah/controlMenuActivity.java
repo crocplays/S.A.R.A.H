@@ -1,6 +1,7 @@
 package com.example.root.projectsarah;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -11,17 +12,23 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class controlMenuActivity extends AppCompatActivity {
 
     private communication com;
     private TextInputLayout TimerValue;
 
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control_menu);
-        com = communication.getInstance();
         new RetrieveFeedTask().execute(com);
+        //com = communication.getInstance("192.168.2.102",4320);
 
         TimerValue = (TextInputLayout) findViewById(R.id.timerValue);
 
@@ -71,17 +78,25 @@ public class controlMenuActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),MainMenu.class));
             }
         });
+
+
+
+
+
     }
 
     public void onOnClick(View v){
+        com = communication.getInstance("192.168.2.102",4320);
         new AsyncSendOn().execute(com);
     }
 
     public void onOffClick(View v){
+        com = communication.getInstance("192.168.2.102",4320);
         new AsyncSendOff().execute(com);
     }
 
     public void onTimerClick(View v){
+        com = communication.getInstance("192.168.2.102",4320);
        new AsyncSendTimedOn().execute(com,"Timer " + TimerValue.getEditText().getText().toString()); // add textbox with seconds to activate , put the value in the str()
     }
 
